@@ -83,7 +83,7 @@ def translate(english):
     Take some English text and return a Pirate-ish version thereof.
     """
     # Normalise a list of words (remove whitespace and make lowercase)
-    words = [w.strip().lower() for w in english.split(' ') if w.strip()]
+    words = [w.lower() for w in english.split()]
     # Substitute some English words with Pirate equivalents.
     result = [_PIRATE_WORDS.get(word, word) for word in words]
     # Capitalize words that begin a sentence and potentially insert a pirate
