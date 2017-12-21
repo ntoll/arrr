@@ -1,6 +1,6 @@
 *.swp
 *.pyc
-uflash.egg-info/*
+arrr.egg-info/*
 .cache/*
 .coverage
 dist/*

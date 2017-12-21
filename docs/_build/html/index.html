@@ -1,0 +1,282 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Arrr - Pirate Speak for Python &#8212; Arrr 1.0.0.alpha.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0.alpha.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="arrr-pirate-speak-for-python">
+<h1>Arrr - Pirate Speak for Python<a class="headerlink" href="#arrr-pirate-speak-for-python" title="Permalink to this headline">¶</a></h1>
+<p>A simple script / module to turn plain English into Pirate. Arrr.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>To install simply type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install arrr
+</pre></div>
+</div>
+<p>…and the package will download from PyPI. If you wish to upgrade to the
+latest version, use the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install --no-cache --upgrade arrr
+</pre></div>
+</div>
+</div>
+<div class="section" id="command-usage">
+<h2>Command Usage<a class="headerlink" href="#command-usage" title="Permalink to this headline">¶</a></h2>
+<p>Once installed, you’ll find you have a <code class="docutils literal"><span class="pre">pirate</span></code> command to use in your shell.</p>
+<p>To read the (non-Pirate friendly) help, simply type:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pirate --help
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pirate -h
+</pre></div>
+</div>
+<p>To translate plain English into something Pirate-ish simply call the command
+followed by some English sentence:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pirate hello there. how are you today?
+Ahoy there. Weigh anchor and hoist the mizzen! How are ye today?
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">pirate</span></code> command will reply with a Pirate-ish equivalent (as shown
+above).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>This software misbehaves like a Pirate.</strong></p>
+<p>Sometimes, the <code class="docutils literal"><span class="pre">pirate</span></code> command will not only translate English to
+Pirate-ish, but will also interject with Pirate sayings (such as,
+“Weigh anchor and hoist the mizzen!” as shown above).</p>
+<p class="last">This is entirely normal and perfectly Piratical behaviour. What else
+were you expecting..?</p>
+</div>
+</div>
+<div class="section" id="using-the-api">
+<h2>Using the API<a class="headerlink" href="#using-the-api" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">arrr</span></code> module’s API is fully documented below. All you really need is to
+import the <code class="docutils literal"><span class="pre">translate</span></code> function and use that to return Pirate-ish sentences
+from a given input in English:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arrr</span> <span class="k">import</span> <span class="n">translate</span>
+
+
+<span class="n">english</span> <span class="o">=</span> <span class="s2">&quot;Hello there. How are you?&quot;</span>
+<span class="n">pirate</span> <span class="o">=</span> <span class="n">translate</span><span class="p">(</span><span class="n">english</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pirate</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The script above will print output similar to that for the command-line usage
+example shown above.</p>
+</div>
+<div class="section" id="development">
+<h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
+<p>The source code is hosted in GitHub. Please feel free to fork the repository.
+Assuming you have Git installed you can download the code from the canonical
+repository with the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone https://github.com/ntoll/arrr.git
+</pre></div>
+</div>
+<p>Ensure you have the correct dependencies for development installed by creating
+a virtualenv and running:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
+</pre></div>
+</div>
+<p>Pull requests are most welcome! Honestly, the <code class="docutils literal"><span class="pre">arrr</span></code> module was cobbled
+together in about 5 minutes and I went overboard (geddit?) with creating a
+simple yet well packaged and documented project so <code class="docutils literal"><span class="pre">arrr</span></code> can act as a good
+example for beginner developers.</p>
+<p>If you find any bugs, <a class="reference external" href="https://github.com/ntoll/arrr/issues/new">submit a new issue</a>.</p>
+</div>
+<div class="section" id="contributing-to-arrr">
+<h2>Contributing to Arrr<a class="headerlink" href="#contributing-to-arrr" title="Permalink to this headline">¶</a></h2>
+<p>Ahoy there, matey! Many thanks for wanting to improve Arrr.</p>
+<p>Contributions are welcome without prejudice from <em>anyone</em> irrespective of
+age, gender, religion, race or sexuality. If you’re thinking, “but they don’t
+mean me”, <em>then we especially mean YOU</em>. Good quality code and engagement
+with respect, humour and intelligence wins every time.</p>
+<ul class="simple">
+<li>If you’re from a background which isn’t well-represented in most geeky
+groups, get involved - <em>we want to help you make a difference</em>.</li>
+<li>If you’re from a background which <em>is</em> well-represented in most geeky
+groups, get involved - <em>we want your help making a difference</em>.</li>
+<li>If you’re worried about not being technical enough, get involved - <em>your
+fresh perspective will be invaluable</em>.</li>
+<li>If you think you’re an imposter, get involved.</li>
+<li>If your day job isn’t code, get involved.</li>
+<li>This isn’t a group of experts, just people. Get involved!</li>
+<li>We are interested in educational, social and technical problems. If you are
+too, get involved.</li>
+<li>This is a new community. <em>No-one knows what they are doing</em>, so, get involved.</li>
+</ul>
+<p>We expect contributors to follow the Python Software Foundation’s Code of
+Conduct: <a class="reference external" href="https://www.python.org/psf/codeofconduct/">https://www.python.org/psf/codeofconduct/</a></p>
+<p>Feedback may be given for contributions and, where necessary, changes will
+be politely requested and discussed with the originating author. Respectful
+yet robust argument is most welcome.</p>
+<p>Finally, contributions are subject to the following caveat: the contribution
+was created by the contributor who, by submitting the contribution, is
+confirming that they have the authority to submit the contribution and place it
+under the license as defined in the LICENSE file found within this repository.</p>
+<div class="section" id="checklist">
+<h3>Checklist<a class="headerlink" href="#checklist" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Your code should be commented in <em>plain English</em> (British or Pirate
+spelling).</li>
+<li>If your contribution is for a major block of work and you’ve not done so
+already, add yourself to the AUTHORS file following the convention found
+therein.</li>
+<li>We don’t have tests because THEY’RE FOR LANDLUBBERS!</li>
+<li>If in doubt, ask a question. The only stupid question is the one that’s never
+asked.</li>
+<li>Most importantly, <strong>Have fun!</strong></li>
+</ul>
+<p>Arrr!</p>
+</div>
+</div>
+</div>
+<div class="section" id="module-arrr">
+<span id="api"></span><h1>API<a class="headerlink" href="#module-arrr" title="Permalink to this headline">¶</a></h1>
+<p>A module for turning plan English into Pirate speak. Arrr.</p>
+<dl class="function">
+<dt id="arrr.get_version">
+<code class="descclassname">arrr.</code><code class="descname">get_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/arrr.html#get_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arrr.get_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string representation of the version information of this project.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="arrr.main">
+<code class="descclassname">arrr.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/arrr.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arrr.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Entry point for the command line tool ‘pirate’.</p>
+<p>Will print help text if the option first argument is “help” Otherwise,
+takes the text passed into the command and prints a pirate version of it.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="arrr.translate">
+<code class="descclassname">arrr.</code><code class="descname">translate</code><span class="sig-paren">(</span><em>english</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/arrr.html#translate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arrr.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take some English text and return a Pirate-ish version thereof.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="release-history">
+<h1>Release History<a class="headerlink" href="#release-history" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="alpha-1">
+<h1>1.0.0.alpha.1<a class="headerlink" href="#alpha-1" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Initial release.</li>
+<li>Very simple implementation.</li>
+<li>Documentation.</li>
+<li>No tests.</li>
+</ul>
+</div>
+<div class="section" id="license">
+<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
+<p>Copyright (c) 2017 Nicholas H.Tollervey.</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the “Software”), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/icon.png" alt="Logo"/>
+            </a></p>
+<h1 class="logo"><a href="#">Arrr</a></h1>
+
+
+
+<p class="blurb">Convert English to Pirate Speak.</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=ntoll&repo=arrr&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Nicholas H.Tollervey.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -5,6 +5,7 @@ A module for turning plan English into Pirate speak. Arrr.
 import argparse  as arrrgparse  # Geddit..? ;-)
 import random
 import os
+import sys
 
 
 #: The help text to be shown when requested.
@@ -108,7 +109,7 @@ def main(argv=None):
     """ 
     Entry point for the command line tool 'pirate'.
 
-    Will print help text if the option first argument is "help" Otherwise,
+    Will print help text if the option first argument is "help". Otherwise,
     takes the text passed into the command and prints a pirate version of it.
     """
     if not argv:
@@ -117,10 +118,16 @@ def main(argv=None):
     parser = arrrgparse.ArgumentParser(description=_HELP_TEXT)
     parser.add_argument('english', nargs='*', default='')
     args = parser.parse_args(argv)
-    if parser.english:
+    if args.english:
         try:
-            print(translate(args.english)
+            plain_english = ' '.join(args.english)
+            print(translate(plain_english))
         except Exception as ex:
-            print("Shiver me timbers. We're fish bait. "
+            print("Error processing English. The pirates replied:\n\n"
+                  "Shiver me timbers. We're fish bait. "
                   "Summat went awry, me lovely!")
             sys.exit(1)
+
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
