@@ -101,22 +101,22 @@ def translate(english):
     return ' '.join(result)
 
 
-def main(argv=None):
+def main(arrrgv=None):
     """ 
     Entry point for the command line tool 'pirate'.
 
     Will print help text if the optional first argument is "help". Otherwise,
     takes the text passed into the command and prints a pirate version of it.
     """
-    if not argv:
-        argv = sys.argv[1:]
+    if not arrrgv:
+        arrrgv = sys.argv[1:]
 
     parser = arrrgparse.ArgumentParser(description=_HELP_TEXT)
     parser.add_argument('english', nargs='*', default='')
-    args = parser.parse_args(argv)
-    if args.english:
+    arrrgs = parser.parse_args(arrrgv)
+    if arrrgs.english:
         try:
-            plain_english = ' '.join(args.english)
+            plain_english = ' '.join(arrrgs.english)
             print(translate(plain_english))
         except Exception:
             print("Error processing English. The pirates replied:\n\n"
