@@ -1,10 +1,11 @@
+#!/usr/bin/env python
+
 # -*- coding: utf-8 -*-
 """
 A module for turning plan English into Pirate speak. Arrr.
 """
-import argparse  as arrrgparse  # Geddit..? ;-)
+import argparse as arrrgparse  # Geddit..? ;-)
 import random
-import os
 import sys
 
 
@@ -83,13 +84,8 @@ def translate(english):
     """
     # Normalise a list of words (remove whitespace and make lowercase)
     words = [w.strip().lower() for w in english.split(' ') if w.strip()]
-    result = []
     # Substitute some English words with Pirate equivalents.
-    for word in words:
-        if word in _PIRATE_WORDS:
-            result.append(_PIRATE_WORDS[word])
-        else:
-            result.append(word)
+    result = [_PIRATE_WORDS.get(word, word) for word in words]
     # Capitalize words that begin a sentence and potentially insert a pirate
     # phrase with a chance of 1 in 5.
     capitalize = True
@@ -122,7 +118,7 @@ def main(argv=None):
         try:
             plain_english = ' '.join(args.english)
             print(translate(plain_english))
-        except Exception as ex:
+        except Exception:
             print("Error processing English. The pirates replied:\n\n"
                   "Shiver me timbers. We're fish bait. "
                   "Summat went awry, me lovely!")
