@@ -17,7 +17,7 @@ Documentation here: https://arrr.readthedocs.io/en/latest/
 
 
 #: MAJOR, MINOR, RELEASE, STATUS [alpha, beta, final], VERSION
-_VERSION = (1, 0, 0, 'alpha', 1)
+_VERSION = (1, 0, 0, 'beta', 1)
 
 
 #: Defines English to Pirate-ish word substitutions.
@@ -31,7 +31,7 @@ _PIRATE_WORDS = {
     "sir": "matey",
     "miss": "proud beauty",
     "stranger": "scurvy dog",
-    "officer": "foul blaggart",
+    "boss": "foul blaggart",
     "where": "whar",
     "is": "be",
     "the": "th'",
@@ -50,7 +50,7 @@ _PIRATE_WORDS = {
     "strong": "heave-ho",
     "take": "pillage",
     "drink": "grog",
-    "scallywag": "idiot",
+    "idiot": "scallywag",
 }
 
 
@@ -109,7 +109,7 @@ def main(argv=None):
     """ 
     Entry point for the command line tool 'pirate'.
 
-    Will print help text if the option first argument is "help". Otherwise,
+    Will print help text if the optional first argument is "help". Otherwise,
     takes the text passed into the command and prints a pirate version of it.
     """
     if not argv:
