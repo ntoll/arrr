@@ -1,7 +1,11 @@
 Arrr - Pirate Speak for Python
 ==============================
 
-A simple script / module to turn plain English into Pirate. Arrr.
+A simple script / module to turn plain English into Pirate speak. Arrr.
+
+We have an entirely serious `code of conduct <https://github.com/ntoll/arrr/blob/master/CODE_OF_CONDUCT.rst>`_
+and a not-so-serious `code of mis-conduct <https://github.com/ntoll/arrr/blob/master/CODE_OF_MISCONDUCT.rst>`_
+for those of a more Piratical disposition.
 
 Installation
 ------------
@@ -68,7 +72,8 @@ example shown above.
 Development
 -----------
 
-The source code is hosted in GitHub. Please feel free to fork the repository.
+The source code is  `hosted in GitHub <https://github.com/ntoll/arrr>`_. Please
+feel free to fork the repository and contribute.
 Assuming you have Git installed you can download the code from the canonical
 repository with the following command::
 
