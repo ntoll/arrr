@@ -39,13 +39,14 @@
           <div class="body" role="main">
             
   <h1>Source code for arrr</h1><div class="highlight"><pre>
-<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">A module for turning plan English into Pirate speak. Arrr.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">argparse</span>  <span class="k">as</span> <span class="nn">arrrgparse</span>  <span class="c1"># Geddit..? ;-)</span>
+<span class="kn">import</span> <span class="nn">argparse</span> <span class="k">as</span> <span class="nn">arrrgparse</span>  <span class="c1"># Geddit..? ;-)</span>
 <span class="kn">import</span> <span class="nn">random</span>
-<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
 
@@ -123,14 +124,9 @@
 <span class="sd">    Take some English text and return a Pirate-ish version thereof.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Normalise a list of words (remove whitespace and make lowercase)</span>
-    <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">english</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">w</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">english</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
     <span class="c1"># Substitute some English words with Pirate equivalents.</span>
-    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">_PIRATE_WORDS</span><span class="p">:</span>
-            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_PIRATE_WORDS</span><span class="p">[</span><span class="n">word</span><span class="p">])</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">_PIRATE_WORDS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
     <span class="c1"># Capitalize words that begin a sentence and potentially insert a pirate</span>
     <span class="c1"># phrase with a chance of 1 in 5.</span>
     <span class="n">capitalize</span> <span class="o">=</span> <span class="kc">True</span>
@@ -163,7 +159,7 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="n">plain_english</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">english</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">translate</span><span class="p">(</span><span class="n">plain_english</span><span class="p">))</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error processing English. The pirates replied:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
                   <span class="s2">&quot;Shiver me timbers. We&#39;re fish bait. &quot;</span>
                   <span class="s2">&quot;Summat went awry, me lovely!&quot;</span><span class="p">)</span>
