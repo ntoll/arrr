@@ -3,6 +3,11 @@ Arrr - Pirate Speak for Python
 
 A simple script / module to turn plain English into Pirate speak. Arrr.
 
+Someone mentioned something called "Pirate Python", I idly wondered if anyone
+had made an English to Pirate-ish module/command written in Python (they
+hadn't), I realised I had a burning desire to make one, and things got out of
+hand. :-)
+
 We have an entirely serious `code of conduct <https://github.com/ntoll/arrr/blob/master/CODE_OF_CONDUCT.rst>`_
 and a not-so-serious `code of mis-conduct <https://github.com/ntoll/arrr/blob/master/CODE_OF_MISCONDUCT.rst>`_
 for those of a more Piratical disposition.
