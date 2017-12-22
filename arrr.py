@@ -2,7 +2,7 @@
 
 # -*- coding: utf-8 -*-
 """
-A module for turning plan English into Pirate speak. Arrr.
+A module for turning plain English into Pirate speak. Arrr.
 """
 import argparse as arrrgparse  # Geddit..? ;-)
 import random
