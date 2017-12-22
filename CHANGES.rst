@@ -1,6 +1,12 @@
 Release History
 ===============
 
+1.0.0.beta.3
+============
+
+* Better arrrg parsing contributed by Tony "buccaneer baloney" Shaw.
+* Corrections of speeling mistaiks by Esteve "make mine an Aranjuez" Fernandez.
+
 1.0.0.beta.2
 ============
 
