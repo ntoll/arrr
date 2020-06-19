@@ -37,7 +37,7 @@ Documentation here: https://arrr.readthedocs.io/en/latest/
 
 
 #: MAJOR, MINOR, RELEASE, STATUS [alpha, beta, final], VERSION
-_VERSION = (1, 0, 0)
+_VERSION = (1, 0, 1)
 
 
 #: Defines English to Pirate-ish word substitutions.
