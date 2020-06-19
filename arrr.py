@@ -3,6 +3,25 @@
 # -*- coding: utf-8 -*-
 """
 A module for turning plain English into Pirate speak. Arrr.
+
+Copyright (c) 2017 Nicholas H.Tollervey.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 import argparse as arrrgparse  # Geddit..? ;-)
 import random
@@ -26,7 +45,7 @@ _PIRATE_WORDS = {
     "hello": "ahoy",
     "hi": "arrr",
     "my": "me",
-    "friend": "bucko",
+    "friend": "m'hearty",
     "boy": "laddy",
     "girl": "lassie",
     "sir": "matey",
@@ -45,6 +64,7 @@ _PIRATE_WORDS = {
     "pub": "fleabag inn",
     "stop": "avast",
     "yes": "aye",
+    "no": "nay",
     "yay": "yo-ho-ho",
     "money": "doubloons",
     "treasure": "booty",
@@ -54,6 +74,13 @@ _PIRATE_WORDS = {
     "idiot": "scallywag",
     "sea": "briney deep",
     "vote": "mutiny",
+    "song": "shanty",
+    "drunk": "three sheets to the wind",
+    "lol": "yo ho ho",
+    "talk": "parley",
+    "fail": "scupper",
+    "quickly": "smartly",
+    "captain": "cap'n",
 }
 
 

@@ -1,6 +1,11 @@
 Release History
 ===============
 
+1.0.1
+=====
+
+* More salty seadog parlay vocabulary.
+
 1.0.0
 =====
 
