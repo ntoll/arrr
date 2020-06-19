@@ -1,6 +1,12 @@
 Release History
 ===============
 
+1.0.0
+=====
+
+* Minor additions to the vocabulary.
+* Black (spot) formatted.
+
 1.0.0.beta.3
 ============
 

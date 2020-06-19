@@ -18,7 +18,7 @@ Documentation here: https://arrr.readthedocs.io/en/latest/
 
 
 #: MAJOR, MINOR, RELEASE, STATUS [alpha, beta, final], VERSION
-_VERSION = (1, 0, 0, 'beta', 3)
+_VERSION = (1, 0, 0)
 
 
 #: Defines English to Pirate-ish word substitutions.
@@ -52,6 +52,8 @@ _PIRATE_WORDS = {
     "take": "pillage",
     "drink": "grog",
     "idiot": "scallywag",
+    "sea": "briney deep",
+    "vote": "mutiny",
 }
 
 
@@ -68,6 +70,8 @@ _PIRATE_PHRASES = [
     "blimey!",
     "blow me down!",
     "avast ye!",
+    "yo ho ho.",
+    "shiver me timbers!",
 ]
 
 
@@ -75,7 +79,7 @@ def get_version():
     """
     Returns a string representation of the version information of this project.
     """
-    return '.'.join([str(i) for i in _VERSION])
+    return ".".join([str(i) for i in _VERSION])
 
 
 def translate(english):
@@ -93,12 +97,12 @@ def translate(english):
         if capitalize:
             result[i] = word.capitalize()
             capitalize = False
-        if word.endswith(('.', '!', '?', ':',)):
+        if word.endswith((".", "!", "?", ":",)):
             # It's a word that ends with a sentence ending character.
             capitalize = True
             if random.randint(0, 5) == 0:
-                result.insert(i+1, random.choice(_PIRATE_PHRASES))
-    return ' '.join(result)
+                result.insert(i + 1, random.choice(_PIRATE_PHRASES))
+    return " ".join(result)
 
 
 def main(arrrgv=None):
@@ -112,18 +116,20 @@ def main(arrrgv=None):
         arrrgv = sys.argv[1:]
 
     parser = arrrgparse.ArgumentParser(description=_HELP_TEXT)
-    parser.add_argument('english', nargs='*', default='')
+    parser.add_argument("english", nargs="*", default="")
     arrrgs = parser.parse_args(arrrgv)
     if arrrgs.english:
         try:
-            plain_english = ' '.join(arrrgs.english)
+            plain_english = " ".join(arrrgs.english)
             print(translate(plain_english))
         except Exception:
-            print("Error processing English. The pirates replied:\n\n"
-                  "Shiver me timbers. We're fish bait. "
-                  "Summat went awry, me lovely!")
+            print(
+                "Error processing English. The pirates replied:\n\n"
+                "Shiver me timbers. We're fish bait. "
+                "Summat went awry, me lovely!"
+            )
             sys.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main(sys.argv[1:])
