@@ -1,6 +1,12 @@
 Release History
 ===============
 
+1.0.2
+=====
+
+* Plundered more piratical phrases from t'interwebz.
+* A more piratical handling of exceptions.
+
 1.0.1
 =====
 

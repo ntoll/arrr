@@ -37,7 +37,7 @@ Documentation here: https://arrr.readthedocs.io/en/latest/
 
 
 #: MAJOR, MINOR, RELEASE, STATUS [alpha, beta, final], VERSION
-_VERSION = (1, 0, 1)
+_VERSION = (1, 0, 2)
 
 
 #: Defines English to Pirate-ish word substitutions.
@@ -99,6 +99,9 @@ _PIRATE_PHRASES = [
     "avast ye!",
     "yo ho ho.",
     "shiver me timbers!",
+    "blisterin' barnacles!",
+    "ye flounderin' nincompoop.",
+    "thundering typhoons!",
 ]
 
 
@@ -153,7 +156,7 @@ def main(arrrgv=None):
             print(
                 "Error processing English. The pirates replied:\n\n"
                 "Shiver me timbers. We're fish bait. "
-                "Summat went awry, me lovely!"
+                "Summat went awry, me lovely! Arrr..."
             )
             sys.exit(1)
 
