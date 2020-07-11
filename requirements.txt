@@ -1,2 +1,2 @@
 sphinx
-black
+black;python_version > "3.5"
