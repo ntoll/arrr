@@ -1,6 +1,11 @@
 Release History
 ===============
 
+1.0.3
+=====
+
+* Project boarded by new pirate matey Calico Hutchison (two new salty phrases).
+
 1.0.2
 =====
 
