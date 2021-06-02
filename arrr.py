@@ -81,6 +81,7 @@ _PIRATE_WORDS = {
     "fail": "scupper",
     "quickly": "smartly",
     "captain": "cap'n",
+    "meeting": "parley with rum and cap'n",
 }
 
 
@@ -102,6 +103,7 @@ _PIRATE_PHRASES = [
     "blisterin' barnacles!",
     "ye flounderin' nincompoop.",
     "thundering typhoons!",
+    "sling yer hook"
 ]
 
 
