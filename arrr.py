@@ -103,7 +103,7 @@ _PIRATE_PHRASES = [
     "blisterin' barnacles!",
     "ye flounderin' nincompoop.",
     "thundering typhoons!",
-    "sling yer hook"
+    "sling yer hook!",
 ]
 
 
