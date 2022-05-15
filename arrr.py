@@ -24,6 +24,7 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 import argparse as arrrgparse  # Geddit..? ;-)
+from csv import reader as HELMSMAN # He be the only lad aboard who can read!
 import random
 import sys
 
@@ -37,52 +38,14 @@ Documentation here: https://arrr.readthedocs.io/en/latest/
 
 
 #: MAJOR, MINOR, RELEASE, STATUS [alpha, beta, final], VERSION
-_VERSION = (1, 0, 3)
+_VERSION = (1, 1, 0)
 
 
 #: Defines English to Pirate-ish word substitutions.
-_PIRATE_WORDS = {
-    "hello": "ahoy",
-    "hi": "arrr",
-    "my": "me",
-    "friend": "m'hearty",
-    "boy": "laddy",
-    "girl": "lassie",
-    "sir": "matey",
-    "miss": "proud beauty",
-    "stranger": "scurvy dog",
-    "boss": "foul blaggart",
-    "where": "whar",
-    "is": "be",
-    "the": "th'",
-    "you": "ye",
-    "old": "barnacle covered",
-    "happy": "grog-filled",
-    "nearby": "broadside",
-    "bathroom": "head",
-    "kitchen": "galley",
-    "pub": "fleabag inn",
-    "stop": "avast",
-    "yes": "aye",
-    "no": "nay",
-    "yay": "yo-ho-ho",
-    "money": "doubloons",
-    "treasure": "booty",
-    "strong": "heave-ho",
-    "take": "pillage",
-    "drink": "grog",
-    "idiot": "scallywag",
-    "sea": "briney deep",
-    "vote": "mutiny",
-    "song": "shanty",
-    "drunk": "three sheets to the wind",
-    "lol": "yo ho ho",
-    "talk": "parley",
-    "fail": "scupper",
-    "quickly": "smartly",
-    "captain": "cap'n",
-    "meeting": "parley with rum and cap'n",
-}
+_PIRATE_WORDS = dict()
+with open('BLABBER.csv') as NONSENSE:
+    for GIBBERISH in HELMSMAN(NONSENSE, delimiter=','):
+        _PIRATE_WORDS[GIBBERISH[0]] = GIBBERISH[1]
 
 
 #: A list of Pirate phrases to randomly insert before or after sentences.
