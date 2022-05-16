@@ -124,7 +124,10 @@ def main(arrrgv=None):
                 "Summat went awry, me lovely! Arrr..."
             )
             sys.exit(1)
-
+    else:
+        print(
+            "Ye filthy bilge rat, don't try to fool me! I will gut yer insides!"
+        )
 
 if __name__ == "__main__":
     main(sys.argv[1:])
