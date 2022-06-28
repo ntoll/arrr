@@ -94,4 +94,4 @@ together in about 5 minutes and I went overboard (geddit?) with creating a
 simple yet well packaged and documented project so ``arrr`` can act as a good
 example for beginner developers.
 
-If you find any bugs, `submit a new issue <https://github.com/ntoll/arrr/issues/new>`_.
+If you find any bugs, `submit a new issue <https://github.com/ntoll/arrr/issues/new>`_. Thank you!
