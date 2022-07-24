@@ -31,5 +31,6 @@ setup(
         "Topic :: Communications",
         "Topic :: Software Development :: Internationalization",
     ],
+    include_package_data=True,
     entry_points={"console_scripts": ["pirate=arrr:main"],},
 )

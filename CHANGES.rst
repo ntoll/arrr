@@ -1,6 +1,14 @@
 Release History
 ===============
 
+1.1.0
+=====
+
+* Words be now in a separate csv file fer convenience.
+* Arrr.py will now get angry if you call it without any arguments. Hornswogglers 'are not welcome me lad.
+* Correct treatment of punctuation and capitalization.
+* Lots of shiny new additions, go check 'em out ye scurvy dog!
+
 1.0.3
 =====
 

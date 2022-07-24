@@ -24,9 +24,9 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 import argparse as arrrgparse  # Geddit..? ;-)
+from csv import reader as HELMSMAN  # He be the only lad aboard who can read!
 import random
 import sys
-
 
 #: The help text to be shown when requested.
 _HELP_TEXT = """
@@ -35,55 +35,14 @@ Take English words and turn them into something Pirate-ish.
 Documentation here: https://arrr.readthedocs.io/en/latest/
 """
 
-
 #: MAJOR, MINOR, RELEASE, STATUS [alpha, beta, final], VERSION
-_VERSION = (1, 0, 3)
-
+_VERSION = (1, 1, 0)
 
 #: Defines English to Pirate-ish word substitutions.
-_PIRATE_WORDS = {
-    "hello": "ahoy",
-    "hi": "arrr",
-    "my": "me",
-    "friend": "m'hearty",
-    "boy": "laddy",
-    "girl": "lassie",
-    "sir": "matey",
-    "miss": "proud beauty",
-    "stranger": "scurvy dog",
-    "boss": "foul blaggart",
-    "where": "whar",
-    "is": "be",
-    "the": "th'",
-    "you": "ye",
-    "old": "barnacle covered",
-    "happy": "grog-filled",
-    "nearby": "broadside",
-    "bathroom": "head",
-    "kitchen": "galley",
-    "pub": "fleabag inn",
-    "stop": "avast",
-    "yes": "aye",
-    "no": "nay",
-    "yay": "yo-ho-ho",
-    "money": "doubloons",
-    "treasure": "booty",
-    "strong": "heave-ho",
-    "take": "pillage",
-    "drink": "grog",
-    "idiot": "scallywag",
-    "sea": "briney deep",
-    "vote": "mutiny",
-    "song": "shanty",
-    "drunk": "three sheets to the wind",
-    "lol": "yo ho ho",
-    "talk": "parley",
-    "fail": "scupper",
-    "quickly": "smartly",
-    "captain": "cap'n",
-    "meeting": "parley with rum and cap'n",
-}
-
+_PIRATE_WORDS = dict()
+with open('BLABBER.csv') as NONSENSE:
+    for GIBBERISH in HELMSMAN(NONSENSE, delimiter=','):
+        _PIRATE_WORDS[GIBBERISH[0]] = GIBBERISH[1]
 
 #: A list of Pirate phrases to randomly insert before or after sentences.
 _PIRATE_PHRASES = [
@@ -118,22 +77,30 @@ def translate(english):
     """
     Take some English text and return a Pirate-ish version thereof.
     """
-    # Normalise a list of words (remove whitespace and make lowercase)
-    words = [w.lower() for w in english.split()]
+    # Put text inside a list of words
+    words = [w for w in english.split()]
+
+    result = list()
     # Substitute some English words with Pirate equivalents.
-    result = [_PIRATE_WORDS.get(word, word) for word in words]
     # Capitalize words that begin a sentence and potentially insert a pirate
     # phrase with a chance of 1 in 5.
     capitalize = True
-    for i, word in enumerate(result):
-        if capitalize:
-            result[i] = word.capitalize()
-            capitalize = False
-        if word.endswith((".", "!", "?", ":",)):
-            # It's a word that ends with a sentence ending character.
+    for i, word in enumerate(words):
+        c = ''
+        if word[-1] in [".", "!", "?", ":"]:
+            c = word[-1]
+            word = word[:-1]
+
+        res = _PIRATE_WORDS.get(word.lower(), word)
+        result.append((res.capitalize() if capitalize else res) + c)
+
+        if c != '':
             capitalize = True
             if random.randint(0, 5) == 0:
-                result.insert(i + 1, random.choice(_PIRATE_PHRASES))
+                result.append(random.choice(_PIRATE_PHRASES).capitalize())
+        else:
+            capitalize = False
+
     return " ".join(result)
 
 
@@ -161,6 +128,10 @@ def main(arrrgv=None):
                 "Summat went awry, me lovely! Arrr..."
             )
             sys.exit(1)
+    else:
+        print(
+            "Ye filthy bilge rat, don't try to fool me! I will gut yer insides!"
+        )
 
 
 if __name__ == "__main__":
