@@ -37,7 +37,7 @@ Documentation here: https://arrr.readthedocs.io/en/latest/
 
 
 #: MAJOR, MINOR, RELEASE, STATUS [alpha, beta, final], VERSION
-_VERSION = (1, 0, 3)
+_VERSION = (1, 0, 4)
 
 
 #: Defines English to Pirate-ish word substitutions.
@@ -82,6 +82,8 @@ _PIRATE_WORDS = {
     "quickly": "smartly",
     "captain": "cap'n",
     "meeting": "parley with rum and cap'n",
+    "there": "thar",
+    "are": "be",
 }
 
 

@@ -24,7 +24,7 @@ Inconsiderate
 +++++++++++++
 
 Members of the crew are wholly inconsiderate of their peers (not to be
-confused with Piers, which you have to be considerate of when sailing a ship).
+confused with piers, which you have to be considerate of when sailing a ship).
 We're thoughtless when addressing the puny efforts of others, ignoring
 that often times the labor was completed simply for the good of the crew. We're
 attentive in our communications, adding "Arrr!" and "Shiver me timbers" as

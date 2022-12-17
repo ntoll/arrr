@@ -1,6 +1,12 @@
 Release History
 ===============
 
+1.0.4
+=====
+
+* Cleaned up blots in the cap'n's log.
+* More piratical ways to mangle English.
+
 1.0.3
 =====
 
