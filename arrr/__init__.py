@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
 """
 A module for turning plain English into Pirate speak. Arrr.
 
@@ -23,10 +21,10 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
-import argparse as arrrgparse  # Geddit..? ;-)
-from csv import reader as HELMSMAN  # He be the only lad aboard who can read!
-import random
 import sys
+import random
+import argparse as arrrgparse  # Geddit..? ;-)
+from csv import reader as helmsman  # He be the only lad aboard who can read!
 
 #: The help text to be shown when requested.
 _HELP_TEXT = """
@@ -40,9 +38,11 @@ _VERSION = (1, 1, 0)
 
 #: Defines English to Pirate-ish word substitutions.
 _PIRATE_WORDS = dict()
-with open('BLABBER.csv') as NONSENSE:
-    for GIBBERISH in HELMSMAN(NONSENSE, delimiter=','):
-        _PIRATE_WORDS[GIBBERISH[0]] = GIBBERISH[1]
+with open('BLABBER.csv') as nonsense:
+    for gibberish in helmsman(nonsense, delimiter=','):
+        _PIRATE_WORDS[gibberish[0]] = gibberish[1]
+
+del nonsense, gibberish
 
 #: A list of Pirate phrases to randomly insert before or after sentences.
 _PIRATE_PHRASES = [
@@ -105,7 +105,7 @@ def translate(english):
 
 
 def main(arrrgv=None):
-    """ 
+    """
     Entry point for the command line tool 'pirate'.
 
     Will print help text if the optional first argument is "help". Otherwise,

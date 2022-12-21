@@ -25,7 +25,7 @@ clean:
 
 tidy: clean
 	@echo "\nTidying code with black..."
-	black -l 79 arrr.py 
+	black -l 79 arrr
 
 docs: clean
 	$(MAKE) -C docs html
