@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from setuptools import setup
 from arrr import get_version
 
@@ -17,8 +16,8 @@ setup(
     author="Nicholas H.Tollervey",
     author_email="ntoll@ntoll.org",
     url="https://github.com/ntoll/arrr",
-    py_modules=["arrr",],
-    license="MIT",
+    packages=["arrr"],
+    include_package_data=True,
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
@@ -31,6 +30,5 @@ setup(
         "Topic :: Communications",
         "Topic :: Software Development :: Internationalization",
     ],
-    include_package_data=True,
-    entry_points={"console_scripts": ["pirate=arrr:main"],},
+    entry_points={"console_scripts": ["pirate=arrr:main"]},
 )
