@@ -23,9 +23,7 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
-import argparse as arrrgparse  # Geddit..? ;-)
 import random
-import sys
 
 
 #: The help text to be shown when requested.
@@ -37,7 +35,7 @@ Documentation here: https://arrr.readthedocs.io/en/latest/
 
 
 #: MAJOR, MINOR, RELEASE, STATUS [alpha, beta, final], VERSION
-_VERSION = (1, 0, 4)
+_VERSION = (1, 0, 5)
 
 
 #: Defines English to Pirate-ish word substitutions.
@@ -116,22 +114,36 @@ def get_version():
     return ".".join([str(i) for i in _VERSION])
 
 
+def capitalized(word):
+    """
+    A MicroPython compatible means of capitalizing a string.
+    """
+    if word:
+        return word[0].upper() + word[1:]
+
+
 def translate(english):
     """
     Take some English text and return a Pirate-ish version thereof.
     """
     # Normalise a list of words (remove whitespace and make lowercase)
-    words = [w.lower() for w in english.split()]
+    original = english.split()
+    words = [w.lower() for w in original]
     # Substitute some English words with Pirate equivalents.
-    result = [_PIRATE_WORDS.get(word, word) for word in words]
+    result = []
+    for count, word in enumerate(words):
+        if word in _PIRATE_WORDS:
+            result.append(_PIRATE_WORDS.get(word, word))
+        else:
+            result.append(original[count])
     # Capitalize words that begin a sentence and potentially insert a pirate
     # phrase with a chance of 1 in 5.
     capitalize = True
     for i, word in enumerate(result):
         if capitalize:
-            result[i] = word.capitalize()
+            result[i] = capitalized(word)
             capitalize = False
-        if word.endswith((".", "!", "?", ":",)):
+        if word[-1] in (".", "!", "?", ":",):
             # It's a word that ends with a sentence ending character.
             capitalize = True
             if random.randint(0, 5) == 0:
@@ -146,6 +158,10 @@ def main(arrrgv=None):
     Will print help text if the optional first argument is "help". Otherwise,
     takes the text passed into the command and prints a pirate version of it.
     """
+    # These imports are here for MicroPython compatibility related reasons.
+    import argparse as arrrgparse  # Geddit..? ;-)
+    import sys
+
     if not arrrgv:
         arrrgv = sys.argv[1:]
 
@@ -163,7 +179,3 @@ def main(arrrgv=None):
                 "Summat went awry, me lovely! Arrr..."
             )
             sys.exit(1)
-
-
-if __name__ == "__main__":
-    main(sys.argv[1:])

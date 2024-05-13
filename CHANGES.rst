@@ -1,6 +1,11 @@
 Release History
 ===============
 
+1.0.5
+=====
+
+* New ship in which to sail: MicroPython.
+
 1.0.4
 =====
 
