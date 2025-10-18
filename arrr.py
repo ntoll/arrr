@@ -82,6 +82,8 @@ _PIRATE_WORDS = {
     "meeting": "parley with rum and cap'n",
     "there": "thar",
     "are": "be",
+    "person" : "landlubber",
+    "disease" : "scurvy"
 }
 
 
@@ -104,6 +106,8 @@ _PIRATE_PHRASES = [
     "ye flounderin' nincompoop.",
     "thundering typhoons!",
     "sling yer hook!",
+    "fifteen men on a dead man's chest!",
+    "yo ho ho and a bottle of rum!",
 ]
 
 
