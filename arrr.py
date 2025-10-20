@@ -35,7 +35,7 @@ Documentation here: https://arrr.readthedocs.io/en/latest/
 
 
 #: MAJOR, MINOR, RELEASE, STATUS [alpha, beta, final], VERSION
-_VERSION = (1, 0, 5)
+_VERSION = (1, 0, 6)
 
 
 #: Defines English to Pirate-ish word substitutions.
@@ -83,7 +83,7 @@ _PIRATE_WORDS = {
     "there": "thar",
     "are": "be",
     "person" : "landlubber",
-    "disease" : "scurvy"
+    "disease" : "scurvy",
 }
 
 
